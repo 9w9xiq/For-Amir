@@ -1,60 +1,69 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Amir 🤍</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="container fade">
-
-<h1>🎵</h1>
-
-<h2>یه چند تا آهنگ...</h2>
-
-<p>
-هر کدومشون یه تیکه از خاطره‌های ما هستن.
-</p>
-
 <div class="music-card">
 
-<h3>🎧 آروم می‌کنی حال بد منو...</h3>
+<h2>🎵 آهنگ‌های ما</h2>
 
-<audio controls>
-  <source src="https://musicdel.ir/single-tracks/63597/?sharebtn" type="audio/mpeg">
-</audio>
-
-</div>
-
-<div class="music-card">
-
-<h3>🎧 تو نیاز منی...</h3>
-
-<audio controls>
-  <source src="https://musicdel.ir/single-tracks/212834/?sharebtn" type="audio/mpeg">
-</audio>
-
-</div>
-
-
-<div class="music-card">
-
-<h3>🎧 دست من نیست...</h3>
-
-<audio controls>
-  <source src="https://www.musicsweb.ir/content/6883/" type="audio/mpeg">
-</audio>
-
-</div>
-
-<button onclick="location.href='end.html'">
-ادامه...
+<!-- آهنگ اول -->
+<div class="song">
+<h3>آروم می‌کنی حال بد منو...</h3>
+<button onclick="window.open('https://musicdel.ir/single-tracks/63597/?sharebtn','_blank')">
+🎧 گوش دادن
 </button>
-
 </div>
 
-</body>
-</html>
+<br>
+
+<!-- آهنگ دوم -->
+<div class="song">
+<h3>تو نیاز منی...</h3>
+<button onclick="window.open('https://musicdel.ir/single-tracks/212834/?sharebtn','_blank')">
+🎧 گوش دادن
+</button>
+</div>
+
+<br>
+
+<!-- آهنگ سوم -->
+<div class="song">
+<h3>دست من نیست تو عزیز جونمی...</h3>
+<button onclick="window.open('https://www.musicsweb.ir/content/6883/','_blank')">
+🎧 گوش دادن
+</button>
+</div>
+
+</div>
+.music-card{
+width:90%;
+max-width:650px;
+margin:auto;
+padding:25px;
+background:rgba(255,255,255,0.06);
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.song{
+margin:25px 0;
+}
+
+.song h3{
+font-size:22px;
+font-weight:normal;
+color:white;
+margin-bottom:15px;
+}
+
+.song button{
+padding:12px 30px;
+background:#ffffff;
+color:#000;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+.song button:hover{
+background:#f4c542;
+transform:scale(1.05);
+}
