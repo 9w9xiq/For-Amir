@@ -250,3 +250,13 @@ to{
 opacity:1;
 }
 }
+body{
+opacity:0;
+animation:siteIn 2s ease forwards;
+}
+
+@keyframes siteIn{
+to{
+opacity:1;
+}
+}
