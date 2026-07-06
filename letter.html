@@ -72,3 +72,26 @@ type();
 ادامه...
 </button>
 </html>
+<script>
+const message = `
+امیر...
+
+هیچی قشنگ‌تر از داشتن تو نیست
+تو همه قلب منی
+بودنت برام بهترین چیزه
+همیشه انتخابت می‌کنم
+همیشه جات اینجاست 🤍
+`;
+
+let i = 0;
+
+function typeWriter(){
+  if(i < message.length){
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+
+window.onload = typeWriter;
+</script>
