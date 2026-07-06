@@ -6,56 +6,109 @@
 <title>For Amir 🤍</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-background:#0f172a;
-font-family:sans-serif;
+background:linear-gradient(180deg,#0b1220,#162033);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+overflow:hidden;
 color:white;
-text-align:center;
 }
 
-.box{
+.container{
+text-align:center;
 padding:30px;
+animation:fade 2s;
 }
 
 h1{
-font-size:38px;
+font-size:48px;
+margin-bottom:15px;
+}
+
+h2{
+font-size:28px;
+font-weight:400;
+margin-bottom:15px;
 }
 
 p{
-font-size:22px;
-opacity:.85;
+font-size:20px;
+opacity:.8;
+margin-bottom:35px;
 }
 
 button{
-margin-top:25px;
-padding:15px 35px;
+padding:16px 36px;
 border:none;
-border-radius:30px;
+border-radius:40px;
+background:white;
+color:#111;
 font-size:18px;
 cursor:pointer;
-background:white;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 8s linear infinite;
+opacity:.25;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-120px);
+}
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="box">
+<div class="heart" style="left:8%;animation-delay:0s;">🤍</div>
+<div class="heart" style="left:22%;animation-delay:2s;">☘️</div>
+<div class="heart" style="left:40%;animation-delay:4s;">✨</div>
+<div class="heart" style="left:60%;animation-delay:1s;">🤍</div>
+<div class="heart" style="left:82%;animation-delay:3s;">☘️</div>
 
-<h1>سلام نفس... 🤍</h1>
+<div class="container">
+
+<h1>For Amir 🤍</h1>
+
+<h2>سلام نفس...</h2>
 
 <p>
 یه دقیقه وقت داری؟
 </p>
 
-<button onclick="alert('به زودی وارد دنیایی میشی که فقط برای تو ساخته شده ❤️')">
-آره، برای تو همیشه.
+<button onclick="location.href='page2.html'"> بلییی 
 </button>
 
 </div>
