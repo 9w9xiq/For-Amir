@@ -1,48 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Amir 🤍</title>
+
+<style>
+
+/* ===== RESET ===== */
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+
+background:#000;
+color:#fff;
+font-family:sans-serif;
+}
+
+/* ===== TEXT ===== */
+h1{
+font-size:60px;
+margin:10px 0;
+}
+
+p{
+font-size:28px;
+margin:10px 0;
+opacity:0.9;
+}
+
+/* ===== BUTTON ===== */
+button{
+margin-top:30px;
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+
+background:#fff;
+color:#000;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+opacity:0.8;
+}
+
+</style>
+
+</head>
+
 <body>
-  <div id="loader">
-  
-</div>
-<div class="stars"></div>
-<div class="container fade">
 
 <h1>For Amir 🤍</h1>
 
-<p>سلام زندگیم...</p>
-
+<p>سلام همه چیزم...</p>
 <p>یه دقیقه وقت داری؟</p>
 
-
-<div class="container">
-
-<button onclick="location.href='music.html'">
-ادامه...
+<button onclick="location.href='letter.html'">بلیییی
 </button>
 
-</div>
-<script>
-document.addEventListener("mousemove", (e) => {
-  const glow = document.getElementById("cursorGlow");
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
-</script>
-<audio id="bgMusic" loop>
-  <source src="song1.mp3" type="audio/mpeg">
-</audio>
 </body>
-<div id="cursorGlow"></div>
-<div class="heart">🤍</div>
-<script>
-let musicStarted = false;
 
-function startMusic(){
-  if(!musicStarted){
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.2;
-    music.play();
-    musicStarted = true;
-  }
-}
-
-document.addEventListener("click", startMusic);
-</script>
+</html>
