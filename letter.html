@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Amir 🤍</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container fade">
+
+<h1>🤍</h1>
+
+<p id="text"></p>
+
+<button onclick="location.href='timer.html'">
+ادامه...
+</button>
+
+</div>
+
+<script>
+
+const message = `
+
+امیر...
+
+نمیخوام اینجا از سختی ها بگم...
+
+یا از روزایی که گذشت.
+
+فقط میخوام یه چیزو بدونی...
+
+از بین تمام اتفاقایی که توی زندگیم افتاده...
+
+آشنایی با تو
+هنوزم
+یکی از قشنگ تریناشه.
+
+🤍
+
+`;
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.getElementById("text").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,45);
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+
+</html>
