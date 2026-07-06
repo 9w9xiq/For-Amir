@@ -65,3 +65,17 @@ document.addEventListener("mousemove", (e) => {
 </body>
 <div id="cursorGlow"></div>
 <div class="heart">🤍</div>
+<script>
+let musicStarted = false;
+
+function startMusic(){
+  if(!musicStarted){
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.2;
+    music.play();
+    musicStarted = true;
+  }
+}
+
+document.addEventListener("click", startMusic);
+</script>
