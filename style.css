@@ -1,10 +1,26 @@
 body{
 margin:0;
-padding:0;
-background:#000000;
-color:#f1f1f1;
 font-family:sans-serif;
-text-align:center;
+color:#f5f5f5;
+background: radial-gradient(circle at top, #1a1a1a, #000000 70%);
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background: radial-gradient(circle, rgba(255,200,120,0.12), transparent 60%);
+animation: moveGlow 8s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes moveGlow{
+from{transform:translate(0,0);}
+to{transform:translate(100px,50px);}
 }
 
 .container{
@@ -25,24 +41,28 @@ opacity:0.9;
 p{
 font-size:18px;
 color:#f1f1f1;
-opacity:0.85;
+opacity:0.9;
 line-height:1.8;
 }
 
 button{
-margin-top:25px;
-padding:14px 30px;
+background: linear-gradient(135deg,#d4af37,#ffcc70);
+color:black;
 border:none;
+padding:14px 30px;
 border-radius:30px;
-background:#ffffff;
-color:#000;
-font-size:16px;
+font-weight:bold;
 cursor:pointer;
+box-shadow:0 0 20px rgba(255,200,120,0.3);
+transition:0.3s;
 }
 
 button:hover{
-opacity:0.8;
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(255,200,120,0.5);
 }
+
+
 
 .music-card{
 width:90%;
@@ -76,8 +96,8 @@ color:#000;
 
 /* 🤍 برگ قلب بزرگ و واضح */
 .leaf{
-width:180px;
-filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+width:200px;
+filter: drop-shadow(0 0 25px rgba(255,215,120,0.4));
 }
 
 /* ✨ افکت ورود نرم */
