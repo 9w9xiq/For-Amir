@@ -204,3 +204,14 @@ opacity:0;
 visibility:hidden;
 }
 }
+.fade{
+opacity:0;
+animation: fadeInSite 2s ease forwards;
+animation-delay:2s;
+}
+
+@keyframes fadeInSite{
+to{
+opacity:1;
+}
+}
