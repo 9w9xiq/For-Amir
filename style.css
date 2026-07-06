@@ -1,49 +1,60 @@
+/* =========================
+   BASE SETUP
+========================= */
+
 body{
 margin:0;
 font-family:sans-serif;
-color:#f5f5f5;
+color:#f1f1f1;
 background: radial-gradient(circle at top, #1a1a1a, #000000 70%);
 overflow-x:hidden;
+opacity:0;
+animation:siteIn 2s ease forwards;
 }
 
-body::before{
-content:"";
-position:fixed;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background: radial-gradient(circle, rgba(255,200,120,0.12), transparent 60%);
-animation: moveGlow 8s infinite alternate;
-pointer-events:none;
+@keyframes siteIn{
+to{
+opacity:1;
+}
 }
 
-@keyframes moveGlow{
-from{transform:translate(0,0);}
-to{transform:translate(100px,50px);}
-}
+/* =========================
+   CENTER LAYOUT
+========================= */
 
 .container{
-padding:40px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+min-height:100vh;
+padding:30px;
+position:relative;
+z-index:2;
+
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 25px;
+box-shadow: 0 0 30px rgba(255,200,120,0.08);
 }
 
-h1{
-font-size:40px;
-color:#f1f1f1;
-}
+/* =========================
+   TEXT
+========================= */
 
-h2{
-font-size:24px;
+h1, h2, p{
 color:#f1f1f1;
-opacity:0.9;
 }
 
 p{
-font-size:18px;
-color:#f1f1f1;
 opacity:0.9;
-line-height:1.8;
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 button{
 background: linear-gradient(135deg,#d4af37,#ffcc70);
@@ -55,6 +66,7 @@ font-weight:bold;
 cursor:pointer;
 box-shadow:0 0 20px rgba(255,200,120,0.3);
 transition:0.3s;
+margin-top:20px;
 }
 
 button:hover{
@@ -62,102 +74,31 @@ transform:scale(1.05);
 box-shadow:0 0 30px rgba(255,200,120,0.5);
 }
 
-
+/* =========================
+   MUSIC CARD
+========================= */
 
 .music-card{
-width:90%;
-max-width:500px;
+width:100%;
+max-width:600px;
 margin:20px auto;
 padding:20px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
 border-radius:20px;
+backdrop-filter:blur(10px);
 }
 
-.music-card h3{
-color:#f1f1f1;
-}
+/* =========================
+   STARS BACKGROUND
+========================= */
 
-.music-card a{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-border:1px solid #fff;
-border-radius:20px;
-color:#fff;
-text-decoration:none;
-transition:0.3s;
-}
-
-.music-card a:hover{
-background:#fff;
-color:#000;
-}
-
-/* 🤍 برگ قلب بزرگ و واضح */
-.leaf{
-width:200px;
-filter: drop-shadow(0 0 25px rgba(255,215,120,0.4));
-}
-
-/* ✨ افکت ورود نرم */
-.fade{
-animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
-}
-body::after{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background: radial-gradient(circle at center, rgba(255,200,120,0.08), transparent 60%);
-pointer-events:none;
-animation: pulse 6s infinite alternate;
-}
-
-@keyframes pulse{
-from{opacity:0.3;}
-to{opacity:0.7;}
-}
-.container{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-
-h2{
-font-size:28px;
-opacity:0;
-transform:translateY(30px);
-animation:show 1s forwards;
-animation-timeline: view();
-animation-range: entry 30% cover 50%;
-}
-
-@keyframes show{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
 .stars{
 position:fixed;
 width:100%;
 height:100%;
 top:0;
 left:0;
-background:transparent;
-overflow:hidden;
 z-index:-1;
 }
 
@@ -183,6 +124,46 @@ opacity:0.5;
 from{transform:translateY(0);}
 to{transform:translateY(-1000px);}
 }
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+#cursorGlow{
+position:fixed;
+width:200px;
+height:200px;
+background:radial-gradient(circle, rgba(255,200,120,0.25), transparent 60%);
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%, -50%);
+z-index:9998;
+}
+
+/* =========================
+   HEART PULSE
+========================= */
+
+.heart{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+font-size:80px;
+animation:pulse 1.5s infinite;
+z-index:5;
+}
+
+@keyframes pulse{
+0%{transform:translate(-50%, -50%) scale(1);}
+50%{transform:translate(-50%, -50%) scale(1.2);}
+100%{transform:translate(-50%, -50%) scale(1);}
+}
+
+/* =========================
+   LOADER
+========================= */
+
 #loader{
 position:fixed;
 width:100%;
@@ -204,6 +185,11 @@ opacity:0;
 visibility:hidden;
 }
 }
+
+/* =========================
+   FADE IN CONTENT
+========================= */
+
 .fade{
 opacity:0;
 animation: fadeInSite 2s ease forwards;
@@ -214,57 +200,4 @@ animation-delay:2s;
 to{
 opacity:1;
 }
-}
-#cursorGlow{
-position:fixed;
-width:200px;
-height:200px;
-background:radial-gradient(circle, rgba(255,200,120,0.25), transparent 60%);
-border-radius:50%;
-pointer-events:none;
-transform:translate(-50%, -50%);
-z-index:9998;
-}
-.heart{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-font-size:80px;
-animation:pulse 1.5s infinite;
-z-index:5;
-}
-
-@keyframes pulse{
-0%{transform:translate(-50%, -50%) scale(1);}
-50%{transform:translate(-50%, -50%) scale(1.2);}
-100%{transform:translate(-50%, -50%) scale(1);}
-}
-body{
-opacity:0;
-animation:siteIn 2s ease forwards;
-}
-
-@keyframes siteIn{
-to{
-opacity:1;
-}
-}
-body{
-opacity:0;
-animation:siteIn 2s ease forwards;
-}
-
-@keyframes siteIn{
-to{
-opacity:1;
-}
-}
-.container{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-min-height:100vh;
 }
